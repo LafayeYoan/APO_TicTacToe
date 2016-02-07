@@ -1,21 +1,20 @@
-package Player;
-
-import Map.Position;
-import Map.Map;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Player;
+
+import Map.Map;
+import Map.Position;
 
 /**
  *
- * @author Darkos
+ * @author lhopital
  */
-public class PlayerIA extends Player{
-
-    public PlayerIA(Map.TokenPlayer token) {
+public class PlayerIARecursive extends Player {
+    
+    public PlayerIARecursive(Map.TokenPlayer token) {
         super(token);
     }
 
@@ -23,7 +22,5 @@ public class PlayerIA extends Player{
     public Position getActionPosition(Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
     
 }
