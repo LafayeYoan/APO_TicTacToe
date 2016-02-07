@@ -21,9 +21,15 @@ public class PlayerIAIterative extends Player{
 
     @Override
     public Position getActionPosition(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
+        
+        Position position = map.playerCanWin();
+        
+        if(position == null) {
+            //Attack
+            return map.getAnEmptyCell();
+        }
+        
+        //Defend
+        return position;
+    }    
 }

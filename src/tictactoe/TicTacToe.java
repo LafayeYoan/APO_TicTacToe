@@ -34,12 +34,16 @@ public class TicTacToe {
 
             //PLAYER TURN ---------------------------
             map.setValueAt(zePlayer.getActionPosition(map), zePlayer.getToken());
+            
+            if(map.getWinner() != null) {
+                break;
+            }
 
             //IA TURN ---------------------------
             //Itérative
-//            map.setValueAt(zeIAIterative.getActionPosition(map), zeIAIterative.getToken());
+            map.setValueAt(zeIAIterative.getActionPosition(map), zeIAIterative.getToken());
 
-            //Récursive
+            //Récursive (decomment to use and comment IA iterative)
 //            map.setValueAt(zeIARecursive.getActionPosition(map), zeIARecursive.getToken());
             
             if(map.getWinner() != null) {
@@ -47,6 +51,9 @@ public class TicTacToe {
             }
             
         }
+        
+        System.out.println("FIN DU JEU :");
+        map.show();
     }
     
 }
