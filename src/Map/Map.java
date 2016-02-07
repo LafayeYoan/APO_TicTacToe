@@ -12,6 +12,7 @@ package Map;
  */
 public class Map {
     private TokenPlayer [][] map;
+    private TokenPlayer winner;
     
     public final static int SIZE =3;
     public enum TokenPlayer{
@@ -27,6 +28,8 @@ public class Map {
                 map[i][j]=TokenPlayer.EMPTY;
             }
         }
+        
+        winner = null;
     }
     
     public TokenPlayer getValueAt(Position p){
@@ -38,14 +41,50 @@ public class Map {
         }
     }
     
-    public boolean setValueAt(Position p, TokenPlayer token){
+    public TokenPlayer setValueAt(Position p, TokenPlayer token){
         if(p.getX()<0 ||p.getY()<0 || p.getX()>=SIZE || p.getY()>=SIZE){
-            return false;
+            return null;
         }
         if(this.getValueAt(p)!= TokenPlayer.EMPTY){
-            return false;
+            return null;
         }
         map[p.getX()][p.getY()] = token;
-        return true;
+        
+        //check winner
+        
+        
+        
+        return token;
+    }
+    
+    public void show(){
+        String toShow = "-------";
+        for(int x = 0; x< SIZE; x++){
+            toShow += "\n|";
+            for(int y = 0 ; y< SIZE; y++){
+                toShow +=getSign(x,y);
+                toShow +="|";
+            }
+            toShow += "\n";
+            toShow +="-------";
+        }
+        
+        System.out.println(toShow);
+        
+    }
+    
+    private String getSign(int x, int y){
+        if(this.map[x][y]==TokenPlayer.PLAYER1){
+            return "O";
+        }
+        
+        if(this.map[x][y]==TokenPlayer.PLAYER2){
+            return "X";
+        }
+        return " ";
+    }
+    
+    public TokenPlayer getWinner(){
+        return this.winner;
     }
 }
