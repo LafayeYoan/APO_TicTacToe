@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/Users/lhopital/Documents/GitHub/APO_TicTacToe/src/Player/PlayerIAIterative.java</file>
             <file>file:/C:/Users/lhopital/Documents/GitHub/APO_TicTacToe/src/Map/Map.java</file>
-=======
-            <file>file:/C:/Users/Darkos/Documents/Github/APO_TicTacToe/src/Map/Map.java</file>
-            <file>file:/C:/Users/Darkos/Documents/Github/APO_TicTacToe/src/tictactoe/TicTacToe.java</file>
-            <file>file:/C:/Users/Darkos/Documents/Github/APO_TicTacToe/src/Player/PlayerHuman.java</file>
-            <file>file:/C:/Users/Darkos/Documents/Github/APO_TicTacToe/src/Player/Player.java</file>
->>>>>>> origin/master
+            <file>file:/C:/Users/lhopital/Documents/GitHub/APO_TicTacToe/src/Player/PlayerIARecursive.java</file>
+            <file>file:/C:/Users/lhopital/Documents/GitHub/APO_TicTacToe/src/tictactoe/TicTacToe.java</file>
+            <file>file:/C:/Users/lhopital/Documents/GitHub/APO_TicTacToe/src/Player/PlayerHuman.java</file>
         </group>
     </open-files>
 </project-private>
