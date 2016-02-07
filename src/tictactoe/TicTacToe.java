@@ -16,6 +16,8 @@ public class TicTacToe {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Map.Map map = new Map.Map();
+        map.show();
     }
     
 }
