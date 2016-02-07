@@ -7,11 +7,9 @@ package tictactoe;
 
 import Map.Map;
 import Map.Map.TokenPlayer;
-import Map.Position;
 import Player.PlayerHuman;
 import Player.PlayerIAIterative;
 import Player.PlayerIARecursive;
-import java.util.Scanner;
 
 /**
  *
@@ -43,6 +41,10 @@ public class TicTacToe {
 
             //Récursive
 //            map.setValueAt(zeIARecursive.getActionPosition(map), zeIARecursive.getToken());
+            
+            if(map.getWinner() != null) {
+                endOfGame = true;
+            }
             
         }
     }

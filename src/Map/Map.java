@@ -15,6 +15,7 @@ public class Map {
     private TokenPlayer winner;
     
     public final static int SIZE =3;
+    
     public enum TokenPlayer{
         EMPTY,
         PLAYER1,
@@ -51,8 +52,7 @@ public class Map {
         map[p.getX()][p.getY()] = token;
         
         //check winner
-        
-        
+        checkWinner(token);        
         
         return token;
     }
@@ -86,5 +86,21 @@ public class Map {
     
     public TokenPlayer getWinner(){
         return this.winner;
+    }
+    
+    private void checkWinner(TokenPlayer token) {
+        //vertical
+        if ((map[0][0].equals(map[0][1]) && (map[0][1].equals(map[0][2])) && (map[0][0] != TokenPlayer.EMPTY))) {winner = token;}
+        if ((map[1][0].equals(map[1][1]) && (map[1][1].equals(map[1][2])) && (map[1][0] != TokenPlayer.EMPTY))) {winner = token;}
+        if ((map[2][0].equals(map[2][1]) && (map[2][1].equals(map[2][2])) && (map[2][0] != TokenPlayer.EMPTY))) {winner = token;}
+        
+        //horizontal
+        if ((map[0][0].equals(map[1][0]) && (map[1][0].equals(map[2][0])) && (map[0][0] != TokenPlayer.EMPTY))) {winner = token;}
+        if ((map[0][2].equals(map[1][2]) && (map[1][2].equals(map[2][2])) && (map[0][2] != TokenPlayer.EMPTY))) {winner = token;}
+        if ((map[0][1].equals(map[1][1]) && (map[1][1].equals(map[2][1])) && (map[0][1] != TokenPlayer.EMPTY))) {winner = token;}
+        
+        //diagonal
+        if ((map[0][0].equals(map[1][1]) && (map[1][1].equals(map[2][2])) && (map[0][0] != TokenPlayer.EMPTY))) {winner = token;}
+        if ((map[0][2].equals(map[1][1]) && (map[1][1].equals(map[2][0])) && (map[0][2] != TokenPlayer.EMPTY))) {winner = token;}
     }
 }

@@ -54,8 +54,8 @@ public class PlayerHuman extends Player{
                 System.out.println("La valeur entrée doit etre supérieure a 0.");
                 continue;
             }
-            if(val >= Map.SIZE){
-                System.out.println("La valeur entrée doit etre inférieure a "+Map.SIZE+1+".");
+            if(val > Map.SIZE){
+                System.out.println("La valeur entrée doit etre inférieure a "+ (Map.SIZE + 1) +".");
                 continue;
             }
             valid = true;
