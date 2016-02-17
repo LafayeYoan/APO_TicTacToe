@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Player;
 
 import Map.Map;
@@ -20,7 +16,12 @@ public class PlayerIARecursive extends Player {
 
     @Override
     public Position getActionPosition(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        int[] minimaxResult = map.minimax(2, this.getToken());
+        
+        System.out.println("score : " + minimaxResult[0]);
+        System.out.println(minimaxResult[1]);
+        System.out.println(minimaxResult[2]);
+        
+        return new Position(minimaxResult[1], minimaxResult[2]);
+    }        
 }

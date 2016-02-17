@@ -41,10 +41,10 @@ public class TicTacToe {
 
             //IA TURN ---------------------------
             //Itérative
-            map.setValueAt(zeIAIterative.getActionPosition(map), zeIAIterative.getToken());
+//            map.setValueAt(zeIAIterative.getActionPosition(map), zeIAIterative.getToken());
 
             //Récursive (decomment to use and comment IA iterative)
-//            map.setValueAt(zeIARecursive.getActionPosition(map), zeIARecursive.getToken());
+            map.setValueAt(zeIARecursive.getActionPosition(map), zeIARecursive.getToken());
             
             if(map.getWinner() != null) {
                 endOfGame = true;
