@@ -211,16 +211,16 @@ public class Map {
          bestScore = evaluate();
       } else {
          for (int[] move : nextMoves) {
-            // Try this move for the current "player"
+            // Try this move (just to simulate it)
             map[move[0]][move[1]] = player;
-            if (player == TokenPlayer.PLAYER2) {  // mySeed (computer) is maximizing player
+            if (player == TokenPlayer.PLAYER2) { 
                currentScore = minimax(depth - 1, TokenPlayer.PLAYER1)[0];
                if (currentScore > bestScore) {
                   bestScore = currentScore;
                   bestRow = move[0];
                   bestCol = move[1];
                }
-            } else {  // oppSeed is minimizing player
+            } else {  
                currentScore = minimax(depth - 1, TokenPlayer.PLAYER2)[0];
                if (currentScore < bestScore) {
                   bestScore = currentScore;
@@ -238,7 +238,7 @@ public class Map {
    /** Find all valid next moves.
        Return List of moves in int[2] of {row, col} or empty list if gameover */
    private List<int[]> generateMoves() {
-      List<int[]> nextMoves = new ArrayList<int[]>(); // allocate List
+      List<int[]> nextMoves = new ArrayList<int[]>();
  
       // Search for empty cells and add to the List
       for (int row = 0; row < SIZE; ++row) {
@@ -285,17 +285,17 @@ public class Map {
  
       // Second cell
       if (map[row2][col2] == TokenPlayer.PLAYER2) {
-         if (score == 1) {   // cell1 is mySeed
+         if (score == 1) {   // cell1 is IA
             score = 10;
-         } else if (score == -1) {  // cell1 is oppSeed
+         } else if (score == -1) {  // cell1 is Player
             return 0;
          } else {  // cell1 is empty
             score = 1;
          }
       } else if (map[row2][col2] == TokenPlayer.PLAYER1) {
-         if (score == -1) { // cell1 is oppSeed
+         if (score == -1) { // cell1 is Player
             score = -10;
-         } else if (score == 1) { // cell1 is mySeed
+         } else if (score == 1) { // cell1 is IA
             return 0;
          } else {  // cell1 is empty
             score = -1;
@@ -304,17 +304,17 @@ public class Map {
  
       // Third cell
       if (map[row3][col3] == TokenPlayer.PLAYER2) {
-         if (score > 0) {  // cell1 and/or cell2 is mySeed
+         if (score > 0) {  // cell1 and/or cell2 is IA
             score *= 10;
-         } else if (score < 0) {  // cell1 and/or cell2 is oppSeed
+         } else if (score < 0) {  // cell1 and/or cell2 is Player
             return 0;
          } else {  // cell1 and cell2 are empty
             score = 1;
          }
       } else if (map[row3][col3] == TokenPlayer.PLAYER1) {
-         if (score < 0) {  // cell1 and/or cell2 is oppSeed
+         if (score < 0) {  // cell1 and/or cell2 is Player
             score *= 10;
-         } else if (score > 1) {  // cell1 and/or cell2 is mySeed
+         } else if (score > 1) {  // cell1 and/or cell2 is IA
             return 0;
          } else {  // cell1 and cell2 are empty
             score = -1;
@@ -322,10 +322,4 @@ public class Map {
       }
       return score;
    }
- 
-   private final int[] winningPatterns = {
-         0b111000000, 0b000111000, 0b000000111, // rows
-         0b100100100, 0b010010010, 0b001001001, // cols
-         0b100010001, 0b001010100               // diagonals
-   };
 }
